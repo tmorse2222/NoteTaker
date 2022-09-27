@@ -4,6 +4,7 @@ const app = express();
 const fs = require('fs');
 const api = require('./routes/index.js');
 const PORT = process.env.PORT || 3001;
+const uniqid = require('uniqid');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -26,6 +27,7 @@ app.get('/api/notes', (req, res) => {
 app.post('/api/notes', (req, res) => {
     const notes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
     const newNote = req.body;
+    newNote.id = uniqid();
     notes.push(newNote);
     fs.writeFileSync('./db/db.json', JSON.stringify(notes));
     res.json(notes);
