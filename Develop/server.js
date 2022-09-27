@@ -23,6 +23,14 @@ app.get('/api/notes', (req, res) => {
     res.json(notes);
 });
 
+app.post('/api/notes', (req, res) => {
+    const notes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
+    const newNote = req.body;
+    notes.push(newNote);
+    fs.writeFileSync('./db/db.json', JSON.stringify(notes));
+    res.json(notes);
+});
+
 app.listen(PORT, () => {
     console.log(`Example app listening at http://localhost:${PORT}`);
     }
