@@ -23,5 +23,6 @@ WHEN I click on the Write icon in the navigation at the top of the page<br>
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column<br>
 <br>
 Description:<br>
-This application is executed through node.js, including the "fs", "express", and "uniqid" npms. This application represents the back end of a note taking application, using multiple landing pages while making successful GET, POST, and DELETE requests to a .json file to allow the user to take, view, and delete notes within the application
-A link to the deployed Heroku application can be found <a href="#">here</a>
+This application is executed through node.js, including the "fs", "express", and "uniqid" npms. This application represents the back end of a note taking application, using multiple landing pages while making successful GET, POST, and DELETE requests to a .json file to allow the user to take, view, and delete notes within the application.<br>
+<img src="/images/screenshot.png" alt="An image of the deployed application">
+A link to the deployed Heroku application can be found <a href="https://lit-everglades-41850.herokuapp.com/">here</a>
